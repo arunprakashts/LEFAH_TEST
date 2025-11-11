@@ -1,0 +1,24 @@
+{
+
+    "globalManager":{
+        "username" : "LEFAHTest1006@deloitte.com",
+        "password" : "NH@mA4g3$pn?qZF!",
+        "Expected" : "Deloitte | Legal Entities and Form AP Hours",
+
+      "ledUserEdit":{
+        "username" : "LEFAHTest1010@deloitte.com",
+        "password" : "NH@mA4g3$pn?qZF!",
+        "Expected" : "Deloitte | Legal Entities and Form AP Hours"
+
+      }
+
+ 
+
+   
+    }
+    
+   
+
+}
+
+    
