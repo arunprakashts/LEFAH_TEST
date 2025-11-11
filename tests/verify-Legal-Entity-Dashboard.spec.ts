@@ -64,7 +64,18 @@ test('Login flow', async ({ page }) => {
   await addLegalEntityScreen.ClickMemberFirmDropdown('Click Member Firm Dropdown');
   await addLegalEntityScreen.ClickRequestLevelDropdown('Select Request Level Dropdown');
   await addLegalEntityScreen.ClickLegalEntityName('Click Legal Entity Name');
-  await page.waitForTimeout(3000);
+  await addLegalEntityScreen.ClickRelationshiptoLegalEntityDropDown('Click Relationship to Legal Entity DropDown');
+  await addLegalEntityScreen.ClickInvestmentDescriptionSection('Click Investment Description Section');
+  await addLegalEntityScreen.ClickInvestmentTypeDropdown('Click Investment Type Dropdown');
+  await addLegalEntityScreen.EnterDescriptionofInvestmentInterest('Enter Description of Investment Interest');
+  await addLegalEntityScreen.ClickSarbanesOxleyConsentsSection('Click Sarbanes Oxley Consents Section');
+  await addLegalEntityScreen.Select102ConsentonFileDropdown('_102bConsentOnFileDropdown');
+  await addLegalEntityScreen.Select106bConsentOnFileDropdown('_106bConsentOnFileDropdown');
+
+  
+
+  
+  
   
 
 
