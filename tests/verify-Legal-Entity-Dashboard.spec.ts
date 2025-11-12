@@ -75,9 +75,15 @@ test('Login flow', async ({ page }) => {
   await addLegalEntityScreen.ClickContactNameAndEmail('Click Contact Name and Email');
   await addLegalEntityScreen.ClickContactNameAndEmailSearchField('Search users by name or email.');
   await addLegalEntityScreen.ClickSearchButtonContactInfo('click search button in contact information')
+  await addLegalEntityScreen.ClickTableValueOFContactNameOrEmail('click Search users by name or email');
+  await addLegalEntityScreen.clickContinueButtonField('click continue button in Contact Name and Email pop-up');
+  await addLegalEntityScreen.ClickLegalStructureContactNameandEmail('click Legal Structure Contact Name and Email')
+  await addLegalEntityScreen.ClickAdditionalInformationSection('Click Additional indormation Notes field')
+  await addLegalEntityScreen.ClickAdditionalInformationNotesField('click Addtional Information notes field')
+  await addLegalEntityScreen.ClickLESaveButton('click save button in Legal entity screen')
 
 
-  await page.pause();
+ 
 
 
   

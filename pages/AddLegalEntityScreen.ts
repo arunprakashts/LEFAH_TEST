@@ -1,7 +1,4 @@
 import { Page , Locator } from "playwright-core";
-import { config } from "../config/env";
-import { console } from "inspector";
-import { loginPage } from "./loginPage";
 export class AddlegalEntityScreen{
 
     public readonly page : Page;
@@ -41,9 +38,13 @@ export class AddlegalEntityScreen{
     public readonly ContactNameAndEmail : Locator;
     public readonly SearchContactNameandEmailField : Locator;
     public readonly ClickSearchButton : Locator;
-
-
-
+    public readonly SelectContactNameOrEmailValue : Locator;
+    public readonly ClickContinueButton : Locator;
+    public readonly LegalStructureContactNameandEmail :Locator;
+    public readonly AdditionalInformationSection : Locator;
+    public readonly AdditionalInformationNotesField :Locator;
+    public readonly LECancelButton : Locator;
+    public readonly LESaveButton : Locator;
 
      private generateRandomNumber(length = 6): string {
         let s = '';
@@ -52,10 +53,12 @@ export class AddlegalEntityScreen{
         }
         return s;
     }
+    
 
 
     constructor(private Page: Page) {
         this.page = Page;
+        
         this.GeneralInformationSectionSection = this.page.getByRole('button', { name: 'General Information' });
         this.GMDMID = this.page.locator('#GMDMID');
         this.DTTLNetworkOption = this.page.getByText('DTTL Network', { exact: true });
@@ -92,6 +95,15 @@ export class AddlegalEntityScreen{
         this.ContactNameAndEmail = this.page.locator('.inputContainer > .inputWrapperContainer > #dropdownParentContainer > .coreSelectDropdown > .coreSelectDropdown-selection > .coreSelectDropdown-selection__rendered').first();
         this.SearchContactNameandEmailField = this.page.locator('#people-picker-modal-container input[type="text"]');
         this.ClickSearchButton = this.page.locator("//button[contains(@class, 'primaryButton') and contains(@class, 'pp-search-btn') and @type='button']");
+        this.SelectContactNameOrEmailValue =this.page.locator("//div[contains(@class, 'dataTableRow')][3]");
+        this.ClickContinueButton = this.page.locator("//button[contains(@class, 'primaryButton') and @data-ths='button-event-myModal' and text()='CONTINUE']");
+        this.LegalStructureContactNameandEmail = this.page.locator('.inputWrapperContainer.inputContainer.InputWrapper-inputContainer-0-2-17.error > #dropdownParentContainer > .coreSelectDropdown > .coreSelectDropdown-selection > .coreSelectDropdown-selection__rendered');
+        this.AdditionalInformationSection = this.page.getByRole('button', { name: 'Additional Information' });
+        this.AdditionalInformationNotesField = this.page.locator('textarea[name="LENotes"]');
+        this.LECancelButton = this.page.getByRole('button', { name: 'Cancel' });
+        this.LESaveButton = this.page.getByRole('button', { name: 'save' });
+
+        
 
 
         
@@ -179,12 +191,38 @@ export class AddlegalEntityScreen{
         await this.ContactNameAndEmail.click();
     }
     async ClickContactNameAndEmailSearchField(SearchContactNameandEmailField : string){
-        await this.SearchContactNameandEmailField.fill('483');
+        await this.SearchContactNameandEmailField.fill('LEFAHTest');
     }
     async ClickSearchButtonContactInfo(ClickSearchButton : string){
         await this.ClickSearchButton.click();
     }
-    
-
-
+    async ClickTableValueOFContactNameOrEmail(SelectContactNameOrEmailValue :string){
+        await this.SelectContactNameOrEmailValue.click();
+    }
+    async clickContinueButtonField(ClickContinueButton : string){
+        await this.ClickContinueButton.click();
+    }
+    async ClickLegalStructureContactNameandEmail(LegalStructureContactNameandEmail : string){
+        await this.LegalStructureContactNameandEmail.click();
+        await this.SearchContactNameandEmailField.fill('LEFAHTest');
+        await this.ClickSearchButton.click();
+        await this.SelectContactNameOrEmailValue.click();
+        await this.ClickContinueButton.click();
+    }
+    async ClickAdditionalInformationSection(AdditionalInformationSection : string){
+        await this.AdditionalInformationSection.click();
+    }
+    async ClickAdditionalInformationNotesField(AdditionalInformationTextField : string){
+        await this.AdditionalInformationNotesField.fill('testing');
+    }
+    async ClickLECancelButton(LECancelButton : string){
+        await this.LECancelButton.click();
+    }
+    async ClickLESaveButton(LESaveButton : string){
+        await this.LESaveButton.click();
+    }
 }
+
+
+
+
