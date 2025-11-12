@@ -71,6 +71,16 @@ test('Login flow', async ({ page }) => {
   await addLegalEntityScreen.ClickSarbanesOxleyConsentsSection('Click Sarbanes Oxley Consents Section');
   await addLegalEntityScreen.Select102ConsentonFileDropdown('_102bConsentOnFileDropdown');
   await addLegalEntityScreen.Select106bConsentOnFileDropdown('_106bConsentOnFileDropdown');
+  await addLegalEntityScreen.SelectAddressOfTheEntityDropDown('Click Address of the Entity');
+  await addLegalEntityScreen.ClickContactNameAndEmail('Click Contact Name and Email');
+  await addLegalEntityScreen.ClickContactNameAndEmailSearchField('Search users by name or email.');
+  await addLegalEntityScreen.ClickSearchButtonContactInfo('click search button in contact information')
+
+
+  await page.pause();
+
+
+  
 
   
 

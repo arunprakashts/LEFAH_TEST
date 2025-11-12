@@ -1,6 +1,7 @@
 import { Page , Locator } from "playwright-core";
 import { config } from "../config/env";
 import { console } from "inspector";
+import { loginPage } from "./loginPage";
 export class AddlegalEntityScreen{
 
     public readonly page : Page;
@@ -27,11 +28,22 @@ export class AddlegalEntityScreen{
     public readonly SelectNO102ConsentonFileOption : Locator;
     public readonly _106bConsentOnFileDropdown : Locator;
     public readonly SelectYes106bConsentOnFileOption : Locator;
-    
+    public readonly SelectNo106bConsentOnFileOption : Locator;
+    public readonly SelectNA106bConsentOnFileOption : Locator;
+    public readonly _106dDesignationOfAgentOnFile : Locator;
+    public readonly SelectYes106dDesignationOfAgentOnFileOption : Locator;
+    public readonly SelectNo106dDesignationOfAgentOnFileOption : Locator;
+    public readonly SelectNA106dDesignationOfAgentOnFileOption : Locator;
+    public readonly AddressOfTheEntitySection : Locator;
+    public readonly ClickAddressOfTheEntityDropDown : Locator;
+    public readonly CountryDropdownOption : Locator;
+    public readonly ContactInformationSection : Locator;
+    public readonly ContactNameAndEmail : Locator;
+    public readonly SearchContactNameandEmailField : Locator;
+    public readonly ClickSearchButton : Locator;
 
-   
 
-    
+
 
      private generateRandomNumber(length = 6): string {
         let s = '';
@@ -67,8 +79,20 @@ export class AddlegalEntityScreen{
         this.SelectNO102ConsentonFileOption = this.page.locator('//*[@id="Cof003"]');
         this._106bConsentOnFileDropdown = this.page.locator('//div[contains(@class,"coreSelectDropdown-selection--single")][.//input[@id="ConsentOnFile_106b"]]');
         this.SelectYes106bConsentOnFileOption = this.page.locator('//*[@id="Na001"]');
-        
-        
+        this.SelectNo106bConsentOnFileOption = this.page.locator('//*[@id="Na002"]');
+        this.SelectNA106bConsentOnFileOption = this.page.locator('//*[@id="Na003"]');
+        this._106dDesignationOfAgentOnFile = this.page.locator('//div[contains(@class,"coreSelectDropdown-selection--single")][.//input[@id="AgentDesigOnFile_106d"]]');
+        this.SelectYes106dDesignationOfAgentOnFileOption = this.page.locator('//span[text()="Yes"]');
+        this.SelectNo106dDesignationOfAgentOnFileOption = this.page.locator('//span[text()="No"]');
+        this.SelectNA106dDesignationOfAgentOnFileOption = this.page.locator('//span[text()="N/A"]');
+        this.AddressOfTheEntitySection = this.page.getByRole('button', { name: 'Address of the Entity' });
+        this.ClickAddressOfTheEntityDropDown = this.page.locator('//div[contains(@class,"coreSelectDropdown-selection--single")][.//input[@id="HQ_CountryID"]]');
+        this.CountryDropdownOption = this.page.locator('//*[@id="4"]');
+        this.ContactInformationSection = this.page.getByRole('button', { name: 'Contact Information' });
+        this.ContactNameAndEmail = this.page.locator('.inputContainer > .inputWrapperContainer > #dropdownParentContainer > .coreSelectDropdown > .coreSelectDropdown-selection > .coreSelectDropdown-selection__rendered').first();
+        this.SearchContactNameandEmailField = this.page.locator('#people-picker-modal-container input[type="text"]');
+        this.ClickSearchButton = this.page.locator("//button[contains(@class, 'primaryButton') and contains(@class, 'pp-search-btn') and @type='button']");
+
 
         
     
@@ -135,5 +159,32 @@ export class AddlegalEntityScreen{
         await this._106bConsentOnFileDropdown.click();
         await this.SelectYes106bConsentOnFileOption.click();
     }
+    async Select106dDesignationOfAgentOnFile(_106dDesignationOfAgentOnFile : string){
+        await this._106dDesignationOfAgentOnFile.click();
+        //await this.SelectNo106dDesignationOfAgentOnFileOption.waitFor({ state: 'visible'});
+        await this.SelectNo106dDesignationOfAgentOnFileOption.click();
+    }
+    async ClickAddressOfTheEntity(AddressOfTheEntitySection : string){
+        const option = await this.AddressOfTheEntitySection.click();
+    }
+    async SelectAddressOfTheEntityDropDown(ClickAddressOfTheEntityDropDown : string){
+        await this.ClickAddressOfTheEntityDropDown.click();
+        await this.CountryDropdownOption.click();
+        
+    }
+    async ClickContactInformationSection(ContactInformationSection : string){
+        await this.ContactInformationSection.click();
+    }
+    async ClickContactNameAndEmail(ContactNameAndEmail : string){
+        await this.ContactNameAndEmail.click();
+    }
+    async ClickContactNameAndEmailSearchField(SearchContactNameandEmailField : string){
+        await this.SearchContactNameandEmailField.fill('483');
+    }
+    async ClickSearchButtonContactInfo(ClickSearchButton : string){
+        await this.ClickSearchButton.click();
+    }
+    
+
 
 }
