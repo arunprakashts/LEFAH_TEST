@@ -4,7 +4,7 @@ dotenv.config();
 
 export const config = {
   baseURL: process.env.BASE_URL || 'https://qtopportalweb.aaps.deloitte.com/',
-  username: process.env.USERNAME || 'LEFAHTest1006@deloitte.com',
-  password: process.env.PASSWORD || 'RexR)7t>%80v#ZhzX',
+  // username: process.env.USERNAME || 'LEFAHTest1006@deloitte.com',
+  // password: process.env.PASSWORD || 'RexR)7t>%80v#ZhzX',
 };
 

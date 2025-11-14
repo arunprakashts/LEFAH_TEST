@@ -3,17 +3,17 @@ import {Page , Locator } from "@playwright/test";
 
 export class HambergerMenuIcon {
 
-    private readonly page : Page;
-    private readonly HamburgerMenu : Locator;
-    private readonly LeadAuditor : Locator;
-    private readonly OtherAccountingFirmParticipant : Locator;
-    private readonly Reports : Locator; 
-    private readonly LegalEntitiesDatabase : Locator;
-    private readonly LegalEntitiesDashboard : Locator;
-    private readonly DeliveryCentersDashboard : Locator;
-    private readonly ChangeRequestsDashboardGlobalDashboard : Locator;
-    private readonly AnnualRequestGlobalDashboard : Locator;
-    private readonly ApplicationManagement : Locator;   
+    page : Page;
+    HamburgerMenu : Locator;
+    LeadAuditor : Locator;
+    OtherAccountingFirmParticipant : Locator;
+    Reports : Locator; 
+    LegalEntitiesDatabase : Locator;
+    LegalEntitiesDashboard : Locator;
+    DeliveryCentersDashboard : Locator;
+    ChangeRequestsDashboardGlobalDashboard : Locator;
+    AnnualRequestGlobalDashboard : Locator;
+    ApplicationManagement : Locator;   
 
 
     constructor(private Page:Page){

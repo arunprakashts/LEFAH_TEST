@@ -1,50 +1,50 @@
 import { Page , Locator } from "playwright-core";
 export class AddlegalEntityScreen{
 
-    public readonly page : Page;
-    public readonly GeneralInformationSectionSection : Locator;
-    public readonly GMDMID : Locator;
-    public readonly DTTLNetworkOption : Locator;
-    public readonly NonDTTLNetworkOption : Locator;
-    public readonly LegalEntityName : Locator;
-    public readonly MemberFirmDropdown : Locator;
-    public readonly selectPoland : Locator;
-    public readonly ClickPolandOption : Locator;
-    public readonly RequestLevelDropdown : Locator;
-    public readonly RelationshiptoLegalEntity : Locator;
-    public readonly SelectAssociatedEntity : Locator;
-    public readonly selectInvestment : Locator;
-    public readonly InvestmentDescriptionSection : Locator;
-    public readonly InvestmentTypeDropdown : Locator;
-    public readonly SelectOtherOption : Locator;
-    public readonly DescriptionofInvestmentInterest : Locator;  
-    public readonly SarbanesOxleyConsentsSection : Locator; 
-    public readonly _102ConsentonFileDropdown : Locator; 
-    public readonly SelectYesSignedconsentOption : Locator;
-    public readonly SelectYesLegalOpinionOption : Locator;
-    public readonly SelectNO102ConsentonFileOption : Locator;
-    public readonly _106bConsentOnFileDropdown : Locator;
-    public readonly SelectYes106bConsentOnFileOption : Locator;
-    public readonly SelectNo106bConsentOnFileOption : Locator;
-    public readonly SelectNA106bConsentOnFileOption : Locator;
-    public readonly _106dDesignationOfAgentOnFile : Locator;
-    public readonly SelectYes106dDesignationOfAgentOnFileOption : Locator;
-    public readonly SelectNo106dDesignationOfAgentOnFileOption : Locator;
-    public readonly SelectNA106dDesignationOfAgentOnFileOption : Locator;
-    public readonly AddressOfTheEntitySection : Locator;
-    public readonly ClickAddressOfTheEntityDropDown : Locator;
-    public readonly CountryDropdownOption : Locator;
-    public readonly ContactInformationSection : Locator;
-    public readonly ContactNameAndEmail : Locator;
-    public readonly SearchContactNameandEmailField : Locator;
-    public readonly ClickSearchButton : Locator;
-    public readonly SelectContactNameOrEmailValue : Locator;
-    public readonly ClickContinueButton : Locator;
-    public readonly LegalStructureContactNameandEmail :Locator;
-    public readonly AdditionalInformationSection : Locator;
-    public readonly AdditionalInformationNotesField :Locator;
-    public readonly LECancelButton : Locator;
-    public readonly LESaveButton : Locator;
+    page : Page;
+    GeneralInformationSectionSection : Locator;
+    GMDMID : Locator;
+    DTTLNetworkOption : Locator;
+    NonDTTLNetworkOption : Locator;
+    LegalEntityName : Locator;
+    MemberFirmDropdown : Locator;
+    selectPoland : Locator;
+    ClickPolandOption : Locator;
+    RequestLevelDropdown : Locator;
+    RelationshiptoLegalEntity : Locator;
+    SelectAssociatedEntity : Locator;
+    selectInvestment : Locator;
+    InvestmentDescriptionSection : Locator;
+    InvestmentTypeDropdown : Locator;
+    SelectOtherOption : Locator;
+    DescriptionofInvestmentInterest : Locator;  
+    SarbanesOxleyConsentsSection : Locator; 
+    _102ConsentonFileDropdown : Locator; 
+    SelectYesSignedconsentOption : Locator;
+    SelectYesLegalOpinionOption : Locator;
+    SelectNO102ConsentonFileOption : Locator;
+    _106bConsentOnFileDropdown : Locator;
+    SelectYes106bConsentOnFileOption : Locator;
+    SelectNo106bConsentOnFileOption : Locator;
+    SelectNA106bConsentOnFileOption : Locator;
+    _106dDesignationOfAgentOnFile : Locator;
+    SelectYes106dDesignationOfAgentOnFileOption : Locator;
+    SelectNo106dDesignationOfAgentOnFileOption : Locator;
+    SelectNA106dDesignationOfAgentOnFileOption : Locator;
+    AddressOfTheEntitySection : Locator;
+    ClickAddressOfTheEntityDropDown : Locator;
+    CountryDropdownOption : Locator;
+    ContactInformationSection : Locator;
+    ContactNameAndEmail : Locator;
+    SearchContactNameandEmailField : Locator;
+    ClickSearchButton : Locator;
+    SelectContactNameOrEmailValue : Locator;
+    ClickContinueButton : Locator;
+    LegalStructureContactNameandEmail :Locator;
+    AdditionalInformationSection : Locator;
+    AdditionalInformationNotesField :Locator;
+    LECancelButton : Locator;
+    LESaveButton : Locator;
 
      private generateRandomNumber(length = 6): string {
         let s = '';
@@ -101,12 +101,7 @@ export class AddlegalEntityScreen{
         this.AdditionalInformationSection = this.page.getByRole('button', { name: 'Additional Information' });
         this.AdditionalInformationNotesField = this.page.locator('textarea[name="LENotes"]');
         this.LECancelButton = this.page.getByRole('button', { name: 'Cancel' });
-        this.LESaveButton = this.page.getByRole('button', { name: 'save' });
-
-        
-
-
-        
+        this.LESaveButton = this.page.getByRole('button', { name: 'save' });  
     
     }
 

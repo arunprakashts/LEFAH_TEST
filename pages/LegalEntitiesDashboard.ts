@@ -3,19 +3,19 @@ import { config } from "../config/env";
 
 export class LegalEntitiesDashboard {
 
-    public readonly page : Page;
-    public readonly LegalEntityDashboardTitle : Locator;
-    public readonly LegalEntityTable: Locator;
-    public readonly LegalEntityColumnHeaders: Locator;
-    public readonly LegalEntityExpectedHeaders: string[];
-    public readonly AtionMenuButton: Locator;
-    public readonly AddLegalEntityOption: Locator;
-    public readonly MakeActiveOption: Locator;
-    public readonly MakeInactiveOption: Locator;
-    public readonly ExportToExcelButton: Locator;
-    public readonly LESearchInput: Locator;
-    public readonly UploadNewPCAOBDataButton: Locator;
-    public readonly FilterButton: Locator;
+    page : Page;
+    LegalEntityDashboardTitle : Locator;
+    LegalEntityTable: Locator;
+    LegalEntityColumnHeaders: Locator;
+    LegalEntityExpectedHeaders: string[];
+    AtionMenuButton: Locator;
+    AddLegalEntityOption: Locator;
+    MakeActiveOption: Locator;
+    MakeInactiveOption: Locator;
+    ExportToExcelButton: Locator;
+    LESearchInput: Locator;
+    UploadNewPCAOBDataButton: Locator;
+    FilterButton: Locator;
     
 
    
